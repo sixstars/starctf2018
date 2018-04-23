@@ -136,7 +136,7 @@ This part is about xor and bit change, but unluckiy I write some wrong code and 
 |5|0^1^4^5|0^1^2^5|0^1^2^3|1^2^3^4|2^3^4^5|0^3^4^5|
 |6|2^4|3^5|0^4|1^5|0^2|1^3|
 
-And now you you can the get all possible 
+And now you you can get all possible conditions. 
 
 ### part2
 

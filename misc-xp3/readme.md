@@ -35,6 +35,6 @@ Actually you don't need to care about what the text is but someone has read it(l
 
 The text is useless since I just want to use long text to make you confused.
 
-This challenge can be solved by basic tool such as `crass`, you don't need to find what the game is and whether you need a special tool.
+This challenge can be solved by basic tool such as `crass`, you don't need to find out what the game is and whether you need a special tool.
 
-And, as the flag mentioned, I hope everyone has a happy end~~~
+And, as the flag mentioned, I hope everyone has a happy end~~
