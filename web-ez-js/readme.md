@@ -50,7 +50,7 @@ It's easy find `main.js` from the `ez-js.har` and you will find what you input i
 
 ### functions and args
 
-I use strange `toString()` here. As `_0x1df991` is a obj, so if you use `args[_0x1df991]`, it will invoked its `toString()` method, return value of i, and i will increase.
+I use strange `toString()` here. As `_0x1df991` is a obj, so if you use `args[_0x1df991]`, it will invoke its `toString()` method, return value of `i`, and `i` will increase.
 
 ```javascript
 const funcs = [check1, check2, check3, check4];
@@ -124,19 +124,19 @@ After finishing this part, you will get `*ctf{}`
 
 ### part1
 
-This part is about xor and bit change, but unluckiy I write some wrong code and it will be multiple solutions.
+This part is about xor and bit change, but unluckily I write some wrong code and it will be multiple solutions.
 
 |stage|arr[0]|arr[1]|arr[2]|arr[3]|arr[4]|arr[5]|
 |---|---|---|---|---|---|---|
-|0|0|1|2|3|4|5|
-|1|0^1|1^2|2^3|3^4|4^5|5^0|
-|2|0^2|1^3|2^4|3^5|4^0|5^1|
-|3|0^1^2^3|1^2^3^4|2^3^4^5|3^4^5^0|4^5^0^1|5^0^1^2|
-|4|0^4|1^5|2^0|3^1|4^2|5^3|
-|5|0^1^4^5|0^1^2^5|0^1^2^3|1^2^3^4|2^3^4^5|0^3^4^5|
-|6|2^4|3^5|0^4|1^5|0^2|1^3|
+|0|a|b|c|d|e|f|
+|1|a^b|b^c|c^d|d^e|e^f|f^a|
+|2|a^c|b^d|c^e|d^f|e^a|f^b|
+|3|a^b^c^d|b^c^d^e|c^d^e^f|d^e^f^a|e^f^a^b|f^a^b^c|
+|4|a^e|b^f|c^a|d^b|e^c|f^d|
+|5|a^b^e^f|a^b^c^f|a^b^c^d|b^c^d^e|c^d^e^f|a^d^e^f|
+|6|c^e|d^f|a^e|b^f|a^c|b^d|
 
-And now you you can get all possible conditions. 
+And now you you can get all possible conditions with different `a` and `b`. 
 
 ### part2
 
@@ -180,10 +180,12 @@ This is a base58 decode, if you find the secret, it will be so easy by using som
 
 It is also a easy part since you can build the tree. And the tree is like this:
 
+```
        I
    n       t
  e   r   e   s
 t 1 n 9 ? ? ! 
+```
 
 So you will find this part is `Interest1n9??!` 
 
