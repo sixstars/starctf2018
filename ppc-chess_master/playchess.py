@@ -104,7 +104,7 @@ class chessHandler(BaseRequestHandler):
 			play(self)
 			i+=1
 
-		self.requet.send("YOU ARE CHESS MASTER!The flag is *ctf{chess_is_s0_ea5y}")
+		self.request.send("YOU ARE CHESS MASTER!The flag is *ctf{chess_is_s0_ea5y}")
 
 
 
