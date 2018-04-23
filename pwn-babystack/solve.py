@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# python solve.py ip port 0x17f0
 from pwn import *
 import hashlib
 
