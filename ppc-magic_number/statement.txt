@@ -1,0 +1,7 @@
+Given n(1<=n<=14) integers a1,a2,...,an in interval [0,1024), you should determine them by sending several queries.
+
+For each query, you can ask "how many integers are in interval [l,r)?" through stdout in format "? l r" where 0<=l<r<=1024, and you will recieve an integer through stdin as the answer.
+
+Finally, if all the integers are determined, you should output them in arbitrary order and in format "! a1 a2 ... an".
+
+Please notice that some of the integers can be the same and that you can send no more than 99 queries in each level.
