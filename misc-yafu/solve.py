@@ -1,3 +1,4 @@
+# refer to http://www.mersenneforum.org/showthread.php?s=2dd8c3a71bd4fee05762e3860541e67c&t=23281 for more details
 from pwn import *
 import string
 from hashlib import sha256
