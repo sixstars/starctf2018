@@ -23,8 +23,11 @@ Official repository containing files related to \*ctf 2018
     * `primepwn` [pwn-primepwn](./pwn-primepwn)
     * `stackoverflow` [pwn-stackoverflow](./pwn-stackoverflow)
     * `young_heap` [pwn-young_heap](./pwn-young_heap)
+    * `urlparse` [pwn-urlparse-urlparse2](./pwn-urlparse-urlparse2)
+    * `urlparse2` [pwn-urlparse-urlparse2](./pwn-urlparse-urlparse2)
 * `re`
     * `wasm` [re-wasm](./re-wasm)
+    * `BabyDroid` [re-baby-droid](./re-baby-droid)
 * `web`
     * `ez-js` [web-ez-js](./web-ez-js)
     * `simpleweb` [web-simpleweb](./web-simpleweb)
