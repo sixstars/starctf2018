@@ -5,7 +5,7 @@ Really terrible for this challenge, **all guys submitted writeup** used the unin
 ## Main
 
 The challenge is inspired by `nonamestill` from `Code Blue CTF 2017`.
-Thanks to [binja](https://github.com/binja) for sharing the [source code](http://binja.github.io/2017/11/13/Thoughts-on-CODE-BLUE-CTF-write-ups/#nonamestill).
+Thanks [binja](https://github.com/binja) for sharing the [source code](http://binja.github.io/2017/11/13/Thoughts-on-CODE-BLUE-CTF-write-ups/#nonamestill).
 
 In fact, there should be only one urlparse challenge in design.
 However, when I write the exploit for urlparse, I think an info leak is needed.
