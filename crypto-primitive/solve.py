@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pwn import *
 import string
 from hashlib import sha256
@@ -61,7 +62,7 @@ def doswap(a,b):
         c.recvline()
 
 for i in range(3):
-    print i
+    print(i)
     m=range(256)
     c.recvuntil('ciphertext is ')
     ct=c.recvline().strip()
@@ -80,4 +81,4 @@ for i in range(3):
     c.sendline('-1')
 
 c.recvuntil('Your flag here.\n')
-print c.recvline()
+print(c.recvline())

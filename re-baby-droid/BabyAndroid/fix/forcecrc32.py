@@ -1,3 +1,4 @@
+from __future__ import print_function
 #
 # CRC-32 forcer (Python)
 # Compatible with Python 2 and 3.

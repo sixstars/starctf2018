@@ -1,4 +1,5 @@
 # -*- coding: utf8 -*-
+from __future__ import print_function
 import hashlib
 import base58
 

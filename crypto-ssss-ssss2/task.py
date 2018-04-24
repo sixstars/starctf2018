@@ -1,3 +1,4 @@
+from __future__ import print_function
 import random,sys,string
 from hashlib import sha256
 import SocketServer
@@ -17,7 +18,7 @@ menu = 'Welcome to Sixstars Secret Storage Service\nCommands:\n\tset [key]\tstor
 
 class Task(SocketServer.BaseRequestHandler):
     def proof_of_work(self):
-        proof = ''.join([random.choice(string.ascii_letters+string.digits) for _ in xrange(20)])
+        proof = ''.join([random.choice(string.ascii_letters+string.digits) for _ in range(20)])
         digest = sha256(proof).hexdigest()
         self.request.send("sha256(XXXX+%s) == %s\n" % (proof[4:],digest))
         self.request.send('Give me XXXX:')
@@ -119,8 +120,8 @@ class ThreadedServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 
 if __name__ == "__main__":
     HOST, PORT = '0.0.0.0', 10002
-    print HOST
-    print PORT
+    print(HOST)
+    print(PORT)
     server = ThreadedServer((HOST, PORT), Task)
     server.allow_reuse_address = True
     server.serve_forever()

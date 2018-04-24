@@ -1,3 +1,4 @@
+from __future__ import print_function
 # refer to http://www.mersenneforum.org/showthread.php?s=2dd8c3a71bd4fee05762e3860541e67c&t=23281 for more details
 from pwn import *
 import string
@@ -17,5 +18,5 @@ c = remote('47.75.4.252',10004)
 dopow()
 num='286b7fb2af5f5d27d216771c90ac6f43a9892a690c48e4b06bcbc1cd'
 c.sendlineafter('factorize:',num)
-print c.recv()
+print(c.recv())
 c.interactive()

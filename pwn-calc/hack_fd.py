@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pwn import *
 context.log_level="debug"
 
@@ -31,4 +32,4 @@ here:
 l=listen(9999)
 conn=l.wait_for_connection()
 conn.send(asm(code,arch="x86"))
-print conn.recvline()
+print(conn.recvline())

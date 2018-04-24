@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 
+from __future__ import print_function
 from pwn import *
 
 msg = '1nTr3stIng-AnDr0id-A&D!'
@@ -11,4 +12,4 @@ for i in xrange(8):
     msg = msg[:i] + p64(t) + msg[i + 8:]
 
 msg = msg[:-8] + p64(u64(msg[-8:]) ^ key)
-print repr(msg)
+print(repr(msg))

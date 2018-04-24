@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pwn import *
 import string
 from hashlib import sha256
@@ -54,10 +55,10 @@ c.send(encrypt('\x02'+'get flag',1))
 cflag=c.recv()
 c.send(encrypt('\x02'+'set a',3))
 t=decrypt(c.recv(),4)
-print t
+print(t)
 c.send(encrypt('\x02'+'\x00'*62,5)+'\x00'*512)
 t=decrypt(c.recv(),6)
-print t
+print(t)
 pt='\x02'+'\x00'*62+'\x01'
 rou=7
 while len(ks)<=2*16+len(cflag):
@@ -70,4 +71,4 @@ while len(ks)<=2*16+len(cflag):
         ks=ks[:(rou+1)*16]
         ks.extend(ks2)
     rou += 2
-print decrypt(cflag,2)
+print(decrypt(cflag,2))

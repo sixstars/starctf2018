@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pwn import *
 import random
 import string
@@ -78,7 +79,7 @@ c.recv(0x90)
 pt=dopad('\x02'+'invalid')
 rou=1
 while len(ks)<=26*16+160:
-    print len(ks),rou
+    print(len(ks),rou)
     c2.send(encrypt('\x02'+'aaaaa',rou))
     t2=c2.recv()
     if len(ks)<=(rou+2)*16:
@@ -115,8 +116,8 @@ c2.send(encrypt('\x02'+'get flag',1))
 for i in range(12):
     t = decrypt(c2.recv(), i*2+2)
     t = t[:t.find('=?')]
-    print t
+    print(t)
     ans = safeeval.expr(t)
     c2.send(encrypt('\x02'+str(ans),i*2+3))
-print decrypt(c2.recv(), 26)
+print(decrypt(c2.recv(), 26))
     
