@@ -20,7 +20,7 @@ jni_onload = elf.symbols['JNI_OnLoad'] & ~1
 log.info('jni onload: %#x', jni_onload)
 
 # patch from JNI_OnLoad end to init func
-begin_addr = elf.search('loaded').next() + 12
+begin_addr = next(elf.search('loaded')) + 12
 # elf.write(elf.search('loaded').next(), '\0' * 6)
 # for sec in elf.sections:
 #     if sec.name == '.text':
@@ -39,8 +39,8 @@ for i in xrange(begin_addr, end_addr, 4):
     elf.write(addr, data[2:])
     elf.write(addr + 2, data[:2])
 
-begin_ptr = elf.search(p32(0xdead0002)).next()
-end_ptr = elf.search(p32(0xdeadff02)).next()
+begin_ptr = next(elf.search(p32(0xdead0002)))
+end_ptr = next(elf.search(p32(0xdeadff02)))
 elf.write(begin_ptr, p32(begin_addr))
 elf.write(end_ptr, p32(end_addr))
 
@@ -57,8 +57,8 @@ for i in xrange(begin_addr, end_addr, 4):
     data ^= key
     elf.write(addr, p32(data))
 
-begin_ptr = elf.search(p32(0xdead0001)).next()
-end_ptr = elf.search(p32(0xdeadff01)).next()
+begin_ptr = next(elf.search(p32(0xdead0001)))
+end_ptr = next(elf.search(p32(0xdeadff01)))
 elf.write(begin_ptr, p32(begin_addr))
 elf.write(end_ptr, p32(end_addr))
 

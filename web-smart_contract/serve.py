@@ -5,6 +5,7 @@ __author__ = 'garzon'
 import pickle
 import hashlib, json, rsa, uuid, os
 from flask import Flask, session, redirect, url_for, escape, request
+from functools import reduce
 
 app = Flask(__name__)
 #<hidden>
@@ -358,7 +359,7 @@ def create_block_api():
 		block = json.loads(request.data)
 		append_block(block, DIFFICULTY)
 		msg = 'transaction finished.'
-	except Exception, e:
+	except Exception as e:
 		return str(e)
 		
 	balance, utxos, tail, contract = get_balance_of_all()

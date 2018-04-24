@@ -1,3 +1,4 @@
+from __future__ import print_function
 import chess,random
 import string
 from sys import argv
@@ -13,7 +14,7 @@ def getMove(board,rh):
 			s=rh.request.recv(5)
 			
 			move=chess.Move.from_uci(s[:-1])
-			print move			
+			print(move)			
 			if move in board.legal_moves:
 				return move
 			else:
@@ -71,7 +72,7 @@ def play(rh):
 
 class chessHandler(BaseRequestHandler):
 	def pofw(self):
-		proof="".join([random.choice(string.ascii_letters+string.digits) for i in xrange(20)])
+		proof="".join([random.choice(string.ascii_letters+string.digits) for i in range(20)])
 		digest = sha256(proof).hexdigest()
 		self.request.send("sha256(xxxx+%s) ==%s\n"%(proof[4:],digest))
 		self.request.send("Give me xxxx:")
@@ -84,7 +85,7 @@ class chessHandler(BaseRequestHandler):
 		try:
 			self.core_handle()
 		except socket.error as e:
-			print e
+			print(e)
 	def core_handle(self):
 		if not self.pofw():
 			return
@@ -111,7 +112,7 @@ class chessHandler(BaseRequestHandler):
 if(__name__ =="__main__"):
 	ThreadingTCPServer.allow_reuse_address=True
 	if(len(argv)<3):
-		print "Usage: {} <IP> <Port>".format(argv[0])
+		print("Usage: {} <IP> <Port>".format(argv[0]))
 	else:
 		ip = argv[1]
 		port = int(argv[2])
@@ -119,6 +120,6 @@ if(__name__ =="__main__"):
 		try:
 			s.serve_forever()
 		except KeyboardInterrupt:
-			print "shut down!"
+			print("shut down!")
 			s.shutdown()
 			s.socket.close()

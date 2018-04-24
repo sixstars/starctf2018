@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 # written in python 2.7
+from __future__ import print_function
 __author__ = 'garzon'
 
 import requests, json, hashlib, rsa, pickle, uuid
@@ -38,7 +39,7 @@ def find_inner_str(haystack, st, ed=None):
 	return haystack[:haystack.index(ed)]
 	
 def append_block(block):
-	print '[APPEND]', s.post(url_prefix+'/create_block', data=json.dumps(block)).text
+	print('[APPEND]', s.post(url_prefix+'/create_block', data=json.dumps(block)).text)
 	
 is_first_time = True
 def show_blockchain():
@@ -48,7 +49,7 @@ def show_blockchain():
 	tokens = json.loads(find_inner_str(ret, 'StarTokens balance of all addresses: ', '.'))
 	balance = json.loads(find_inner_str(ret, 'StarCoins balance of all addresses: ', '.'))
 	if not is_first_time:
-		print '[tokens = {}, balance = {}]'.format(tokens.get(my_address, 0), balance[my_address])
+		print('[tokens = {}, balance = {}]'.format(tokens.get(my_address, 0), balance[my_address]))
 	is_first_time = False
 	return ret, json.loads(find_inner_str(ret, 'Blockchain Explorer: '))
 	
