@@ -35,4 +35,12 @@ So arbitrary chars is allowed now.
 
 ## Intended
 
-*TODO: The intended solution will be uploaded together with fixed urlparse2 in about one week.*
+After encoding url with specific size, we can leave a `%` at the end of the url.
+It gives us a chance to modify the size of next chunk while decoding url.
+However, most of time, you can only change the size of next chunk to `0`, which is invalid.
+Only when the next chunk size is `0x100xx`, you can change the size to `0x10000`.
+So, in fact, it's supposed to be an `off-by-one-null-byte` vulnerability.
+
+For bypassing `\0`, as we can leave a null byte at the end of the input url, we can free the previous input and input again with smaller size to achieve the goal.
+
+For more detail, view the code.
