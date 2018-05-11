@@ -51,3 +51,5 @@ Though you can guess that `b.so` must have been loaded in this challenge.
    Or even, maybe you can write an binary to call the function directly.
 
 I only remember the above key points...
+
+PS: There is something interesting if you dig into the code. You can consider why I use `Runtime.getRuntime().load(LIB_B, Thread.currentThread().getContextClassLoader())` instead of calling `System.load(LIB_B)` directly in `JNI_Onload` of `liba.so`.
