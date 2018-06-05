@@ -19,7 +19,7 @@ So I made some tradeoff.
 1. I hide the library load operation for `b.so` in `JNI_Onload` of `a.so`.
 Though you can guess that `b.so` must have been loaded in this challenge.
 
-1. `a.so` ptrace itself when loaded to prevent debugger.
+1. `a.so` ptrace itself when loaded to prevent debugger. Thanks AAA for remindering me that ptrace self in main thread / parent process won't work when SELinux turned on.
 
 1. `a.so` bind `stringFromJNI` to supply checksum for `a.so`, which will be called by `b.so`.
 
