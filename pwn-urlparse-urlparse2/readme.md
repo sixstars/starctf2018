@@ -11,7 +11,7 @@ In fact, there should be only one urlparse challenge in design.
 However, when I write the exploit for urlparse, I think an info leak is needed.
 So I comment the check for small size to allow `fgets` read nothing, thus avoid terminate null bytes.
 However, 0 size not only cause info leak, but can also lead to heap mess.
-That's why I cann't forgive myself because I use the same unintended solution to pwn `nonamestill`.
+That's why I can't forgive myself because I use the same unintended solution to pwn `nonamestill`.
 And then, I decided to think about a revenge, urlparse2 is born.
 
 Unfortunately, most of you guys used another unintended solution, which haven't been fixed in urlparse2. Regretful for not checking the captured payload carefully.
